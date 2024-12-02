@@ -1,7 +1,13 @@
-import React from 'react';
-import { Briefcase } from 'lucide-react';
+import React from "react";
+import { Briefcase } from "lucide-react";
 
-const ExperienceCard = ({ clientName, tenure, role, summary, responsibilities }) => {
+const ExperienceCard = ({
+  clientName,
+  tenure,
+  role,
+  summary,
+  responsibilities,
+}) => {
   return (
     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition">
       <div className="flex items-start mb-4">
@@ -9,7 +15,9 @@ const ExperienceCard = ({ clientName, tenure, role, summary, responsibilities })
           <Briefcase size={40} />
         </div>
         <div>
-          <h3 className="text-2xl font-semibold text-teal-secondary">{clientName}</h3>
+          <h3 className="text-2xl font-semibold text-teal-secondary">
+            {clientName}
+          </h3>
           <p className="text-gray-600 dark:text-gray-400">{tenure}</p>
           <h4 className="text-xl font-medium">{role}</h4>
         </div>
@@ -17,9 +25,11 @@ const ExperienceCard = ({ clientName, tenure, role, summary, responsibilities })
       <p className="text-gray-700 dark:text-gray-300 mb-4">{summary}</p>
       <div>
         <h5 className="font-semibold mb-2">Key Responsibilities:</h5>
-        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
+        <ul className="list- list-inside text-gray-700 dark:text-gray-300">
           {responsibilities.map((resp, index) => (
-            <li key={index} className="mb-1">{resp}</li>
+            <li key={index} className="mb-1">
+              {resp}
+            </li>
           ))}
         </ul>
       </div>
@@ -30,41 +40,44 @@ const ExperienceCard = ({ clientName, tenure, role, summary, responsibilities })
 const Experience = () => {
   const experiences = [
     {
-      clientName: "TechInnovate Solutions",
-      tenure: "Jan 2022 - Present",
-      role: "Senior Frontend Developer",
-      summary: "Led frontend development for multiple web applications, focusing on creating scalable and responsive user interfaces.",
+      clientName: "Scaleup Consulting",
+      tenure: "Feb 2024 - Present",
+      role: "JavaScript Developer",
+      summary:
+        "Led frontend development for multiple web applications, focusing on creating scalable and responsive user interfaces.",
       responsibilities: [
-        "Developed and maintained React-based web applications",
-        "Implemented responsive design using Tailwind CSS",
-        "Collaborated with cross-functional teams to deliver high-quality products",
-        "Mentored junior developers and conducted code reviews"
-      ]
+        "Developed advanced user interfaces with React, improving engagement and functionality.",
+        "Integrated front-end with backend services, boosting scalability and performance.",
+        "Created modular components for streamlined development and maintainability.",
+        "Ensured clear communication with clients and teams for timely, high-quality project delivery.",
+      ],
     },
     {
-      clientName: "Digital Dynamics Inc.",
-      tenure: "Jun 2019 - Dec 2021",
+      clientName: "OzHarvest",
+      tenure: "Jun 2024 - Jun 2024",
       role: "Frontend Developer",
-      summary: "Contributed to the development of interactive web applications and improved overall frontend performance.",
+      summary:
+        "Contributed to the development of interactive web applications and improved overall frontend performance.",
       responsibilities: [
         "Created pixel-perfect designs from wireframes and mockups",
         "Optimized application performance and load times",
         "Implemented state management using Redux",
-        "Integrated RESTful APIs and handled data fetching"
-      ]
+        "Integrated RESTful APIs and handled data fetching",
+      ],
     },
     {
       clientName: "StartUp Innovators",
       tenure: "Jan 2018 - May 2019",
       role: "Junior Frontend Developer",
-      summary: "Gained foundational experience in frontend development and modern web technologies.",
+      summary:
+        "Gained foundational experience in frontend development and modern web technologies.",
       responsibilities: [
         "Developed responsive websites using HTML, CSS, and JavaScript",
         "Learned and implemented React best practices",
         "Worked on cross-browser compatibility",
-        "Assisted in UI/UX design improvements"
-      ]
-    }
+        "Assisted in UI/UX design improvements",
+      ],
+    },
   ];
 
   return (
@@ -74,7 +87,7 @@ const Experience = () => {
       </h2>
       <div className="grid md:grid-cols-3 gap-8">
         {experiences.map((exp, index) => (
-          <ExperienceCard 
+          <ExperienceCard
             key={index}
             clientName={exp.clientName}
             tenure={exp.tenure}
