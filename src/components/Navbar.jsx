@@ -7,9 +7,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
         <div className="text-2xl font-bold text-teal-primary">
-        <a href="#home" className="hover:text-teal-secondary transition">
           MKSher
-        </a>
         </div>
         <div className="flex items-center space-x-4">
           <a href="#home" className="hover:text-teal-secondary transition">Home</a>
