@@ -1,5 +1,4 @@
-import { Icon } from "lucide-react";
-import React from "react";
+/* eslint-disable react/prop-types */
 import {
   SiReact,
   SiJavascript,
@@ -7,6 +6,8 @@ import {
   SiNodedotjs,
   SiFirebase,
   SiCss3,
+  SiExpress,
+  SiMysql
 } from "react-icons/si";
 import { DiJava } from "react-icons/di";
 
@@ -42,6 +43,8 @@ const Skills = () => {
     { Icon: SiCss3, name: "CSS3", level: 3 },
     { Icon: DiJava, name: "Java", level: 2 },
     { Icon: SiNodedotjs, name: "Node.js", level: 2 },
+    { Icon: SiExpress, name: "Express.js", level: 1 },
+    { Icon: SiMysql, name: "MySQL", level: 1 }
   ];
 
   return (

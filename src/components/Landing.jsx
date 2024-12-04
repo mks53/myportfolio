@@ -1,4 +1,3 @@
-import React from "react";
 import mksImage from "../assets/mks.jpeg";
 import murtazaResume from "../assets/Murtaza Developer Resume.pdf";
 import {
@@ -25,12 +24,23 @@ const Home = () => {
         {/* Add more icons as needed */}
       </div>
       <div className="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-8 z-10">
-        <div className="flex-shrink-0">
-          <img
-            src={mksImage}
-            alt="Your Name"
-            className="w-64 h-64 object-cover rounded-full border-4 border-teal-primary shadow-lg"
-          />
+      <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img
+                src={mksImage}
+                alt="Your Name"
+                className="w-64 h-64 object-cover rounded-full border-4 border-teal-primary shadow-lg"
+              />
+            </div>
+            <div className="flip-card-back">
+              <img
+                src={mksImage}
+                alt="Your Name"
+                className="w-64 h-64 object-cover rounded-full border-4 border-teal-primary shadow-lg"
+              />
+            </div>
+          </div>
         </div>
         <div className="text-center md:text-left">
           <h1 className="text-5xl font-bold mb-4 text-teal-secondary">
@@ -39,7 +49,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold mb-4 text-teal-secondary">
             Frontend Developer
           </h2>
-          <p className="text-xl max-w-2xl text-gray-700 dark:text-gray-300">
+          <p className="text-xl max-w-2xl text-black-700 dark:text-gray-300">
             Detail-oriented front-end developer skilled in React, HTML, CSS, and
             JavaScript, with a proven record of delivering user-friendly web
             applications and intuitive user experiences.

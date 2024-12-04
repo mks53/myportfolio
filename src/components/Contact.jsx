@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Mail, Phone } from "lucide-react";
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { useState } from "react";
+import { Mail, Phone, Github, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,41 +16,40 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Implement form submission logic (e.g., send to backend or email service)
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({ name: "", email: "", message: "" });
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "978b2d07-a789-4de8-a065-4888d9ae9649");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      console.log("Success", res);
+    } else {
+      console.log("Error", res);
+    }
   };
 
-  const socialLinks = [
-    {
-      Icon: Github,
-      link: "https://github.com/mks53",
-      color: "text-teal-600 dark:text-white",
-    },
-    {
-      Icon: Linkedin,
-      link: "https://www.linkedin.com/in/mksherwala/",
-      color: "text-teal-600 dark:text-white",
-    },
-    {
-      Icon: Instagram,
-      link: "https://twitter.com/yourusername",
-      color: "text-teal-600",
-    },
-  ];
-
   return (
-    <section id="contact" className="py-16">
-      <h2 className="text-4xl font-bold text-center mb-12 text-teal-secondary">
+    <section id="contact" className="py-16 bg-gray-100 dark:bg-gray-900">
+      <h2 className="text-4xl font-bold text-center mb-12 text-teal-secondary dark:text-white">
         Contact Me
       </h2>
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
         {/* Contact Form */}
-        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md border-2 border-transparent hover:border-teal-500 transition-all duration-300">
+          <form onSubmit={onSubmit} className="space-y-4">
             <div>
               <label
                 htmlFor="name"
@@ -106,38 +104,27 @@ const Contact = () => {
             </button>
           </form>
         </div>
-
         {/* Contact Information */}
-        <div className="flex flex-col justify-center space-y-6">
+        <div className="flex flex-col space-y-4">
           <div className="flex items-center space-x-4">
-            <Mail className="text-teal-primary text-4xl" />
-            <div>
-              <h3 className="text-xl font-semibold">Email</h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                murtaza.sherwala@gmail.com
-              </p>
-            </div>
+            <Mail className="text-teal-500 w-6 h-6" />
+            <span className="text-gray-700 dark:text-gray-300">murtaza.sherwala@gmail.com</span>
           </div>
           <div className="flex items-center space-x-4">
-            <Phone className="text-teal-primary text-4xl" />
-            <div>
-              <h3 className="text-xl font-semibold">Phone</h3>
-              <p className="text-gray-700 dark:text-gray-300">
-                +61 498 525 356
-              </p>
-            </div>
+            <Phone className="text-teal-500 w-6 h-6" />
+            <span className="text-gray-700 dark:text-gray-300">+61 498 525 356</span>
           </div>
-          <div className="flex space-x-6 justify-start mt-4">
-            {socialLinks.map(({ Icon, link, color }, index) => (
-              <a
-                key={index}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${color} hover:opacity-75 transition text-4xl`}>
-                <Icon />
-              </a>
-            ))}
+          <div className="flex items-center space-x-4">
+            <Github className="text-teal-500 w-6 h-6" />
+            <a href="https://github.com/mksherwala" className="text-gray-700 dark:text-gray-300 hover:underline">
+              GitHub
+            </a>
+          </div>
+          <div className="flex items-center space-x-4">
+            <Linkedin className="text-teal-500 w-6 h-6" />
+            <a href="https://www.linkedin.com/in/mksherwala/" className="text-gray-700 dark:text-gray-300 hover:underline">
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

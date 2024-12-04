@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { Github, ExternalLink } from "lucide-react";
+/* eslint-disable react/prop-types */
+import  { useState } from "react";
+import { ExternalLink } from "lucide-react";
 import savvyESC from "../assets/savvyESC.png";
+import CDS from "../assets/CDS.png";
 
 const ProjectCard = ({
   name,
   description,
   image,
   skills,
-  githubLink,
   liveLink,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -39,15 +40,6 @@ const ProjectCard = ({
           ))}
         </div>
         <div className="flex space-x-4">
-          {githubLink && (
-            <a
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-700 p-2 rounded-full hover:bg-gray-600 transition">
-              <Github />
-            </a>
-          )}
           {liveLink && (
             <a
               href={liveLink}
@@ -74,20 +66,12 @@ const Projects = () => {
       liveLink: "https://savvy-esc.web.app/",
     },
     {
-      name: "Task Management App",
+      name: "City Driving School",
       description:
-        "Collaborative task management application with real-time updates and user authentication.",
-      image: "/path/to/task-management-image.jpg",
-      skills: ["React", "Firebase", "Tailwind CSS", "Authentication"],
-      liveLink: "https://your-task-management-app.vercel.app",
-    },
-    {
-      name: "Weather Forecast App",
-      description:
-        "Real-time weather application with detailed forecasts and interactive UI.",
-      image: "/path/to/weather-app-image.jpg",
-      skills: ["React", "API Integration", "Responsive Design", "Chart.js"],
-      liveLink: "https://your-weather-app.vercel.app",
+        "Developed a website for a driving school with a advance UI, contact form, and responsive design.",
+      image: CDS,
+      skills: ["React", "Firebase", "MaterialUI", "Canva", "Figma"],
+      liveLink: "https://citydrivingschool.com.au/",
     },
   ];
 
@@ -96,7 +80,7 @@ const Projects = () => {
       <h2 className="text-4xl font-bold text-center mb-12 text-teal-secondary">
         Projects
       </h2>
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
