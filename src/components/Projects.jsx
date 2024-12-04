@@ -63,7 +63,7 @@ const Projects = () => {
         "Developed a web app for construction design with Google Maps, secure authentication, Stripe integration, and validations.",
       image: savvyESC,
       skills: ["React", "Firebase", "MaterialUI", "Node.js", "Stripe"],
-      liveLink: "https://savvy-esc.web.app/",
+      liveLink: "app.savvyesc.com.au",
     },
     {
       name: "City Driving School",
