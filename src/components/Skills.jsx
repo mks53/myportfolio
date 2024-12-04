@@ -18,7 +18,7 @@ const SkillCard = ({ Icon, name, level, className }) => {
       <div className="text-5xl text-teal-primary mb-4">
         <Icon />
       </div>
-      <h3 className="text-xl font-semibold mb-2">{name}</h3>
+      <h3 className="text-xl font-semibold mb-2 text-center">{name}</h3>
       <div className="flex space-x-1">
         {[1, 2, 3].map((star) => (
           <span
@@ -52,7 +52,7 @@ const Skills = () => {
       <h2 className="text-4xl font-bold text-center mb-12 text-teal-secondary">
         My Skills
       </h2>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {skills.map((skill, index) => (
           <SkillCard
             key={index}

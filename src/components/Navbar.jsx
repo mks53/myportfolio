@@ -7,6 +7,10 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
@@ -54,26 +58,31 @@ const Navbar = () => {
         } bg-white dark:bg-gray-900`}>
         <a
           href="#home"
+          onClick={closeMenu}
           className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition text-text-light dark:text-text-dark-contrast">
           Home
         </a>
         <a
           href="#skills"
+          onClick={closeMenu}
           className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition text-text-light dark:text-text-dark-contrast">
           Skills
         </a>
         <a
           href="#experience"
+          onClick={closeMenu}
           className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition text-text-light dark:text-text-dark-contrast">
           Experience
         </a>
         <a
           href="#projects"
+          onClick={closeMenu}
           className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition text-text-light dark:text-text-dark-contrast">
           Projects
         </a>
         <a
           href="#contact"
+          onClick={closeMenu}
           className="block px-4 py-2 hover:bg-teal-500 hover:text-white transition text-text-light dark:text-text-dark-contrast">
           Contact
         </a>
