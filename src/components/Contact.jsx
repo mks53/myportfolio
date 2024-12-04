@@ -108,21 +108,33 @@ const Contact = () => {
         <div className="flex flex-col space-y-4">
           <div className="flex items-center space-x-4">
             <Mail className="text-teal-500 w-6 h-6" />
-            <span className="text-gray-700 dark:text-gray-300">murtaza.sherwala@gmail.com</span>
+            <a
+              href="mailto:murtaza.sherwala@gmail.com"
+              className="text-gray-700 dark:text-gray-300 hover:text-teal-500 transition-colors">
+              murtaza.sherwala@gmail.com
+            </a>
           </div>
           <div className="flex items-center space-x-4">
             <Phone className="text-teal-500 w-6 h-6" />
-            <span className="text-gray-700 dark:text-gray-300">+61 498 525 356</span>
+            <a
+              href="tel:+61498525356"
+              className="text-gray-700 dark:text-gray-300 hover:text-teal-500 transition-colors">
+              +61 498 525 356
+            </a>
           </div>
           <div className="flex items-center space-x-4">
             <Github className="text-teal-500 w-6 h-6" />
-            <a href="https://github.com/mksherwala" className="text-gray-700 dark:text-gray-300 hover:underline">
+            <a
+              href="https://github.com/mks53"
+              className="text-gray-700 dark:text-gray-300 hover:underline">
               GitHub
             </a>
           </div>
           <div className="flex items-center space-x-4">
             <Linkedin className="text-teal-500 w-6 h-6" />
-            <a href="https://www.linkedin.com/in/mksherwala/" className="text-gray-700 dark:text-gray-300 hover:underline">
+            <a
+              href="https://www.linkedin.com/in/mksherwala/"
+              className="text-gray-700 dark:text-gray-300 hover:underline">
               LinkedIn
             </a>
           </div>
