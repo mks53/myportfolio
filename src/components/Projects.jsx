@@ -3,6 +3,7 @@ import  { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import savvyESC from "../assets/savvyESC.png";
 import CDS from "../assets/CDS.png";
+import ZMap from "../assets/personalProject.png";
 
 const ProjectCard = ({
   name,
@@ -62,8 +63,16 @@ const Projects = () => {
       description:
         "Developed a web app for construction design with Google Maps, secure authentication, Stripe integration, and validations.",
       image: savvyESC,
-      skills: ["React", "Firebase", "MaterialUI", "Node.js", "Stripe"],
-      liveLink: "app.savvyesc.com.au",
+      skills: ["React", "Firebase", "Google Maps APIs", "MaterialUI", "Node.js", "Stripe"],
+      liveLink: "https://app.savvyesc.com.au",
+    },
+    {
+      name: "ZMap",
+      description:
+        "Web application designed for community leader to efficiently plan their visits to multiple locations within a suburban area",
+      image: ZMap,
+      skills: ["React", "Firebase", "MFA", "Google Maps API"],
+      liveLink: "https://planmytrip-1107.web.app",
     },
     {
       name: "City Driving School",
