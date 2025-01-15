@@ -14,7 +14,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50">
       <div className="container mx-auto flex justify-between items-center py-4 px-4">
-        <div className="text-2xl font-bold text-teal-primary">MKSher</div>
+        <a
+          href="#home"
+          className="hover:text-teal-secondary transition text-text-light dark:text-text-dark-contrast">
+          <div className="text-2xl font-bold text-teal-primary">MKSher</div>
+        </a>
         <div className="hidden md:flex items-center space-x-4">
           <a
             href="#home"

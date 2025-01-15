@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,9 +37,14 @@ const Contact = () => {
     }).then((res) => res.json());
 
     if (res.success) {
-      console.log("Success", res);
+      toast.success("Thank you! Your message was sent successfully.");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } else {
-      console.log("Error", res);
+      toast.error("Oops! Something went wrong. Please try again.");
     }
   };
 
@@ -111,7 +118,7 @@ const Contact = () => {
             <a
               href="mailto:murtaza.sherwala@gmail.com"
               className="text-gray-700 dark:text-gray-300 hover:text-teal-500 transition-colors">
-              murtaza.sherwala@gmail.com
+                info@mksher.com
             </a>
           </div>
           <div className="flex items-center space-x-4">
@@ -140,6 +147,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

@@ -29,14 +29,14 @@ const Home = () => {
             <div className="flip-card-front">
               <img
                 src={mksImage}
-                alt="Your Name"
+                alt="Murtaza K Sherwala"
                 className="w-64 h-64 object-cover rounded-full border-4 border-teal-primary shadow-lg"
               />
             </div>
             <div className="flip-card-back">
               <img
                 src={mksImage}
-                alt="Your Name"
+                alt="Murtaza K Sherwala"
                 className="w-64 h-64 object-cover rounded-full border-4 border-teal-primary shadow-lg"
               />
             </div>
